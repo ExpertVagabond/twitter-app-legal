@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Authorization Complete - ZetaChain</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+        .success-icon {
+            font-size: 4em;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #27ae60;
+        }
+        .close-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .close-btn:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon">✅</div>
+        <h1>Twitter Authorization Complete!</h1>
+        
+        <p><strong>Your Twitter app has been successfully authorized.</strong></p>
+        
+        <div class="instructions">
+            <h3>🎉 What's Next:</h3>
+            <p>Your ZetaChain blockchain automation tools now have access to:</p>
+            <ul style="text-align: left; display: inline-block;">
+                <li>📝 Post tweets about blockchain events</li>
+                <li>🔍 Search and monitor Twitter mentions</li>
+                <li>📊 Share analytics and insights</li>
+                <li>🤖 Automate social media workflows</li>
+            </ul>
+        </div>
+        
+        <p>You can now close this window and return to your development environment.</p>
+        
+        <button class="close-btn" onclick="window.close()">Close Window</button>
+        
+        <hr style="margin: 30px 0;">
+        
+        <p style="font-size: 14px; color: #7f8c8d;">
+            <strong>ZetaChain Development Tools</strong><br>
+            Blockchain automation made simple
+        </p>
+    </div>
+
+    <script>
+        // Auto-close after 10 seconds if user doesn't click
+        setTimeout(() => {
+            window.close();
+        }, 10000);
+        
+        // Display any OAuth parameters for debugging
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.has('code') || urlParams.has('oauth_token')) {
+            console.log('OAuth callback received:', Object.fromEntries(urlParams));
+        }
+    </script>
+</body>
+</html>
